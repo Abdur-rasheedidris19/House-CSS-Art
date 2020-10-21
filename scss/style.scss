@@ -1,0 +1,346 @@
+$red: #e2532f;
+$bodyc: #f7e4ac;
+$blue: #7c9ca3;
+$blueShad: #6a848a;
+$doorframe: #55493e;
+$doorc: #806f5d;
+$lightgreen: #92aa4a;
+$darkgreeb: #75882e;
+$shadow: rgba(98, 54, 54, 0.164);
+$lightwood: #9b6c26;
+$darkwood: #765823;
+$sky: #dcecf9;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: $sky;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  max-width: 1200px;
+  // transform: scale(0.5);
+  // z-index: -100;
+}
+
+.house {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sideleft {
+  width: 200px;
+  height: 200px;
+
+  &__roof {
+    position: relative;
+    width: 200px;
+    height: 70px;
+    background: $red;
+    box-shadow: 0px 10px 0px $shadow;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: 0;
+      left: -50px;
+      // background: red;
+      border-left: 50px solid transparent;
+      border-right: 70px sold transparent;
+      border-bottom: 70px solid $red;
+    }
+  }
+
+  &__body {
+    width: 200px;
+    height: 120px;
+    background: $bodyc;
+    padding-top: 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 110px;
+      background: $shadow;
+      margin-top: -8px;
+      margin-left: 12em;
+    }
+
+    &--wind {
+      width: 150px;
+      height: 80px;
+      // background: #000;
+      margin-left: 30px;
+      border: 5px solid $doorframe;
+      background: repeating-linear-gradient(
+          transparent,
+          transparent 35px,
+          $doorframe 35px,
+          $doorframe 40px
+        ),
+        repeating-linear-gradient(
+          $shadow,
+          $shadow 10px,
+          transparent 10px,
+          transparent 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 18px,
+          $shadow 18px,
+          $shadow 30px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          $blue,
+          $blue 24px,
+          $doorframe 24px,
+          $doorframe 30px
+        );
+    }
+  }
+}
+
+.sideright {
+  width: 200px;
+  height: 200px;
+
+  &__roof {
+    position: relative;
+    width: 200px;
+    height: 70px;
+    background: $red;
+    box-shadow: 0px 10px 0px rgba(128, 128, 128, 0.287);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: 0;
+      right: -50px;
+      // background: red;
+      border-left: 50px solid transparent;
+      border-right: 70px sold transparent;
+      border-bottom: 70px solid $red;
+      transform: rotateY(180deg);
+      // border-bottom: 70px solid transparent;
+    }
+  }
+
+  &__body {
+    width: 200px;
+    height: 120px;
+    background: $bodyc;
+    padding-top: 18px;
+
+    &--wind {
+      width: 150px;
+      height: 80px;
+      // background: #000;
+      margin-left: 25px;
+      border: 5px solid $doorframe;
+      background: repeating-linear-gradient(
+          transparent,
+          transparent 35px,
+          $doorframe 35px,
+          $doorframe 40px
+        ),
+        repeating-linear-gradient(
+          $shadow,
+          $shadow 10px,
+          transparent 10px,
+          transparent 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 18px,
+          $shadow 18px,
+          $shadow 30px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          $blue,
+          $blue 24px,
+          $doorframe 24px,
+          $doorframe 30px
+        );
+    }
+  }
+}
+
+.forefront {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+  min-width: 200px;
+  height: 300px;
+  background: $bodyc;
+
+  &__windowsm {
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $blue;
+    border: 3px solid $doorframe;
+    box-shadow: inset -8px 0px $shadow;
+  }
+  &__window {
+    align-self: center;
+    width: 60px;
+    height: 70px;
+    background: $blue;
+    border: 4px solid $doorframe;
+    margin-top: auto;
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 35px,
+        $doorframe 35px,
+        $doorframe 39px
+      ),
+      repeating-linear-gradient(
+        $shadow,
+        $shadow 10px,
+        transparent 10px,
+        transparent 30px
+      );
+  }
+
+  &__door {
+    width: 70px;
+    height: 100px;
+    // background:$blue;
+    border-radius: 50% 50% 0 0;
+    border: 5px solid $doorframe;
+    border-bottom: 0;
+    align-self: center;
+    margin-top: auto;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 25px,
+        $doorframe 25px,
+        $doorframe 35px
+      ),
+      repeating-linear-gradient(
+        $doorc,
+        $doorc 22px,
+        $doorframe 22px,
+        $doorframe 28px
+      );
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    // background: #000;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid $bodyc;
+    top: -100px;
+  }
+
+  &__roof::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    width: 110px;
+    height: 20px;
+    background: $red;
+    transform: skewX(20deg);
+    transform: skewY(-45deg);
+  }
+
+  &__roof::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    width: 110px;
+    height: 20px;
+    background: $red;
+    transform: skewX(-20deg);
+    transform: skewY(45deg);
+  }
+}
+
+.tree {
+  position: relative;
+  width: 100px;
+
+  &__leaf {
+    position: absolute;
+    top: -14em;
+    width: 100px;
+    height: 200px;
+    background: repeating-linear-gradient(
+      90deg,
+      $darkgreeb,
+      $darkgreeb 50px,
+      $lightgreen 50px,
+      $lightgreen 100px
+    );
+    border-radius: 200% 200% 150% 150%/200% 200% 150% 150%;
+    z-index: -100;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -2em;
+      width: 20px;
+      height: 40px;
+      background: repeating-linear-gradient(
+        90deg,
+        $lightwood,
+        $lightwood 9px,
+        $darkwood 9px,
+        $darkwood 18px
+      );
+      // z-index: 10000;
+      border-radius: 40% 40% 0 0;
+    }
+  }
+}
+
+.ground {
+  width: 100%;
+  height: 100px;
+  background: $lightgreen;
+  border-radius: 40% 40% 0 0;
+  margin-top: -20px;
+}
